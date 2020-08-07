@@ -6,7 +6,8 @@ const app = express();
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
-const path = require("path")
+const path = require("path");
+
 
 //My routes
 const authRoutes = require("./routes/auth");
@@ -15,7 +16,7 @@ const categoryRoutes = require("./routes/category");
 const productRoutes = require("./routes/product");
 const orderRoutes = require("./routes/order");
 const paymentBRoutes = require("./routes/paymentB");
-
+const { portt } = require("./client/src/backend1");
 
 //DB Connection
 mongoose
@@ -43,18 +44,25 @@ app.use("/api", productRoutes);
 app.use("/api", orderRoutes);
 app.use("/api", paymentBRoutes);
 
-if(process.env.NODE_ENV === 'production'){
-  app.use(express.static('client/build'))
+// if(process.env.NODE_ENV === 'production'){
+//   app.use(express.static('client/build'))
 
-  app.get('*',(req, res) => {
-    res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
-  })
-}
+//   app.get('*',(req, res) => {
+//     res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
+//   })
+// }
+app.use(express.static(path.join(__dirname, "client", "build")))
+
+
+
 
 //PORT
-const port = process.env.PORT || 8000;
+// const port = process.env.PORT || 8000;
 
+app.get("*", (req, res) =>{
+  res.sendFile(path.join(__dirname, "client", "build", "index.html"))
+})
 //Starting a server
-app.listen(port, () => {
-  console.log(`app is running at ${port}`);
+app.listen(portt, () => {
+  console.log(`app is running at ${portt}`);
 });

@@ -1,1 +1,4 @@
-export const API = process.env.REACT_APP_BACKEND
+import { portt } from "./backend1"
+
+
+export const API = `http://localhost:${portt}/api`

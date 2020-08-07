@@ -4,11 +4,12 @@ import "../styles.css"
 import Base from "../core/Base"
 import Card from './Card'
 import { getProductS } from './helper/coreapicalls'
-import { API } from "../backend";
+import { API } from "../backend1";
+
 
 
 export default function Home() {
-    console.log("API IS", API)
+    console.log(API)
 
     const [products, setProducts] = useState([])
     const [error, setError] = useState(false)
