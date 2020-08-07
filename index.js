@@ -20,7 +20,7 @@ const { portt } = require("./client/src/backend1");
 
 //DB Connection
 mongoose
-  .connect( process.env.MONGODB_URI || process.env.DATABASE, {
+  .connect( process.env.MONGODB_URI , {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true
