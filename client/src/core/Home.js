@@ -35,15 +35,7 @@ export default function Home() {
         <Base title="Home page">
             <div className="row text-center">
             <h1 className="text-white">All of Tshirts</h1>
-                <div className="row">
-                    {products.map((product, index) =>{
-                        return (
-                            <div key={index} className="col-4 mb-4">
-                                <Card product={product} />
-                            </div>
-                        )
-                    })}
-                </div>
+                <p>"hello users"</p>
             </div>
         </Base>
     )
