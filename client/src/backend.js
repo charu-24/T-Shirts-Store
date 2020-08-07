@@ -1,1 +1,3 @@
-export const API = process.env.PORT || process.env.REACT_APP_BACKEND
+const port = process.env.PORT || 8000
+
+export const API = `http://localhost:${port}/api`
