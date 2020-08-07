@@ -1,0 +1,1 @@
+export const API = process.env.PORT || process.env.REACT_APP_BACKEND
