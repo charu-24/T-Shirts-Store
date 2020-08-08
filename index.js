@@ -44,24 +44,24 @@ app.use("/api", productRoutes);
 app.use("/api", orderRoutes);
 app.use("/api", paymentBRoutes);
 
-// if(process.env.NODE_ENV === 'production'){
-//   app.use(express.static('client/build'))
+if(process.env.NODE_ENV === 'production'){
+  app.use(express.static('client/build'))
 
-//   app.get('*',(req, res) => {
-//     res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
-//   })
-// }
-app.use(express.static(path.join(__dirname, "client", "build")))
-
-
+  app.get('*',(req, res) => {
+    res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
+  })
+}
+// app.use(express.static(path.join(__dirname, "client", "build")))
 
 
-//PORT
-// const port = process.env.PORT || 8000;
 
-app.get("*", (req, res) =>{
-  res.sendFile(path.join(__dirname, "client", "build", "index.html"))
-})
+
+// //PORT
+// // const port = process.env.PORT || 8000;
+
+// app.get("*", (req, res) =>{
+//   res.sendFile(path.join(__dirname, "client", "build", "index.html"))
+// })
 //Starting a server
 app.listen(portt, () => {
   console.log(`app is running at ${portt}`);
