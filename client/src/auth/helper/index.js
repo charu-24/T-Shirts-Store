@@ -1,4 +1,4 @@
-import { API } from "../../backend";
+import { API } from "../../backend1";
 
 export const signup = user => {
 

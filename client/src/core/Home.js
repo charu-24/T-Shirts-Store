@@ -4,8 +4,7 @@ import "../styles.css"
 import Base from "../core/Base"
 import Card from './Card'
 import { getProductS } from './helper/coreapicalls'
-import { API } from "../backend1";
-
+import { API } from "../backend";
 
 
 export default function Home() {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../styles.css"
-import { API } from "../backend"
+import { API } from "../backend1"
 import Base from "../core/Base"
 import Card from './Card'
 import { loadCart } from "./helper/cartHelper";
